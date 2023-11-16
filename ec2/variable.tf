@@ -1,26 +1,18 @@
-variable "ami_id" {
+variable "ami" {
     type = string
-    description = "ami of instance"
-    default = "ami-0e8a34246278c21e4"
+    description = "ami id"
+    default = "ami-05c13eab67c5d8861"
 }
 
 variable "instance_type" {
     type = string
-    description = "instance type of instance"
+    description = "type of the instance"
     default = "t2.micro"
 }
 
-
-
-variable "availability_zones" {
-    type = list(string)
-    description = "AZ for instances"
-    default = ["us-east-1a", "us-east-1b"]
-}
-
-variable "private_subnet_ids" {
-    type = list(string)
-    description = "private subnets to launch instance"
+variable "subnet_id" {
+    type = string
+    description = "subnet id to launch the instance"
 }
 
 variable "tags" {
@@ -30,10 +22,5 @@ variable "tags" {
 
 variable "vpc_id" {
     type = string
-    description = "vpc id"
-}
-
-variable "vpc_cidr_block" {
-    type = list (string)
-    description = "vpc cidr block"
+    description = "vpc id to launch sg"
 }
